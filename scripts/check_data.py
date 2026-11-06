@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 import analyze_kr as k  # noqa: E402
 import analyze_us as u  # noqa: E402
+import analyze_intl as t  # noqa: E402
 
 
 def main():
@@ -27,6 +28,16 @@ def main():
         good = set(d) == {"Total"} | set(u.HIGH_SUB + u.LOW) and all(len(v) == 8 for v in d.values())
         ok &= good
         print(f"미국 {y}: 필요한 행 5개 중 {len(d)}개 추출, 연령 칸 8개씩 {'OK' if good else '확인 필요'}")
+    # 추가 분석(설계서 9절): 지역마다 연도 7개 × 업종 5개(전체 포함) × 필요한 연령 구간
+    loaders = (("일본", t.load_japan, t.JP), ("EU27", lambda: t.load_eu()[0], t.EU), ("호주", t.load_australia, t.AU))
+    for name, load, spec in loaders:
+        cell = load()
+        inds = [spec["total"]] + spec["high_sub"] + spec["low"]
+        ages = sorted(set(spec["young_sub"] + spec["young"] + spec["old"]))
+        need = [(a, y, i) for a in ages for y in t.YEARS for i in inds]
+        miss = [x for x in need if x not in cell]
+        ok &= not miss
+        print(f"{name}: 연도 {len(t.YEARS)}개 × 업종 {len(inds)}개 × 연령 구간 {len(ages)}개 = 필요한 칸 {len(need)}개, 빠진 칸 {len(miss)}개")
     print("결과:", "설계서의 자료가 모두 있음" if (not missing and ok) else "빠진 자료 있음")
 
 
