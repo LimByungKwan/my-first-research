@@ -8,7 +8,7 @@
 
 | 경로 | 내용 |
 |---|---|
-| `paper/paper.md` | 논문 본문 (표지, 초록, 1~5장, 참고문헌, 부록 A) |
+| `paper/paper.md` | 논문 본문 (표지, 초록, 1\~5장, 참고문헌, 부록 A) |
 | `DESIGN.md` | 분석 전에 정해 커밋한 설계서 (가설, 지표, 판정 기준, 변경 기록) |
 | `data/raw/` | 원자료. 내려받은 그대로이며 손대지 않음 |
 | `data/us_extracted.csv` | 미국 PDF에서 뽑은 행 (`analyze_us.py`가 만듦) |
@@ -20,15 +20,15 @@
 
 | 파일 | 출처 | 내려받은 날 |
 |---|---|---|
-| `kosis_regional_employment_industry_age_20261106.csv` | 국가데이터처 KOSIS, 지역별고용조사 「전국 산업/연령/교육정도/종사상지위별 취업자」. 반기, 2019.1/2~2026.1/2, 산업(대분류)×연령, 추정치와 상대표준오차. 인코딩 cp949 | 2026-11-06 |
+| `kosis_regional_employment_industry_age_20261106.csv` | 국가데이터처 KOSIS, 지역별고용조사 「전국 산업/연령/교육정도/종사상지위별 취업자」. 반기, 2019.1/2\~2026.1/2, 산업(대분류)×연령, 추정치와 상대표준오차. 인코딩 cp949 | 2026-11-06 |
 | `japan_estat_lfs_table2-2-1_20261106.csv` | (추가 분석) 일본 총무성 노동력조사 기본집계 표 2-2-1 「年齢階級，産業別就業者数」, e-Stat 통계표 ID 0003007108, 연평균, 만 명, 인코딩 cp932 | 2026-11-06 |
-| `eu_eurostat_lfsa_egan2_20261106.xlsx` | (추가 분석) Eurostat `lfsa_egan2`, EU27(2020년부터), 성별 Total, 연령 15~24·15~39·40~64세, NACE Total·I·J·K·M, 2019~2025 | 2026-11-06 |
+| `eu_eurostat_lfsa_egan2_20261106.xlsx` | (추가 분석) Eurostat `lfsa_egan2`, EU27(2020년부터), 성별 Total, 연령 15\~24·15\~39·40\~64세, NACE Total·I·J·K·M, 2019\~2025 | 2026-11-06 |
 | `australia_abs_EQ12_20261106.xlsx` | (추가 분석) ABS Labour Force, Australia, Detailed EQ12 (연령 × 산업 대분류), 분기별, 천 명 | 2026-11-06 |
-| `bls_cpsaat18b_2019.pdf` ~ `bls_cpsaat18b_2025.pdf` | U.S. Bureau of Labor Statistics, CPS 연평균 Table 18b (Employed persons by detailed industry and age). `https://www.bls.gov/cps/data/aa{연도}/cpsaat18b.pdf` | 2026-11-06 |
+| `bls_cpsaat18b_2019.pdf` \~ `bls_cpsaat18b_2025.pdf` | U.S. Bureau of Labor Statistics, CPS 연평균 Table 18b (Employed persons by detailed industry and age). `https://www.bls.gov/cps/data/aa{연도}/cpsaat18b.pdf` | 2026-11-06 |
 
 주의할 점:
 - KOSIS 표의 `*`는 상대표준오차 25% 이상인 칸입니다. 판정에 쓰는 칸 중 해당 칸은 없습니다 (`results/kr_summary.txt` 맨 위 참고).
-- KOSIS 표는 제11차 한국표준산업분류를 2013년 상반기부터 소급 반영해, 2019~2025년이 같은 분류 기준입니다.
+- KOSIS 표는 제11차 한국표준산업분류를 2013년 상반기부터 소급 반영해, 2019\~2025년이 같은 분류 기준입니다.
 - 2026.1/2 값은 받은 파일에 들어 있지만 설계 범위 밖이라 분석에서 뺐습니다.
 - BLS 2025년 표는 2022년 Census 산업분류를 쓰는 새 기준이고 11개월 평균입니다. 그래서 2025년은 보조 분석으로만 씁니다.
 
@@ -53,20 +53,20 @@ python scripts/plot_intl.py     # 그림 2: results/fig_intl.png
 
 | 논문 | 파일 |
 |---|---|
-| 표 1~2 (한국 비중과 격차) | `results/kr_summary.txt` |
-| 표 3~4 (미국 비중과 격차) | `results/us_summary.txt` |
+| 표 1\~2 (한국 비중과 격차) | `results/kr_summary.txt` |
+| 표 3\~4 (미국 비중과 격차) | `results/us_summary.txt` |
 | 표 5 (최종 판정) | 두 요약 파일의 "→ 지지 / 지지 아님" 줄 |
 | 그림 1 (연도별 흐름) | `results/fig_trends.png` (자료: `kr_share_series.csv`, `us_share_series.csv`) |
 | 2.9 계산 확인 | `scripts/check_data.py` 출력 |
-| 표 6~7 (추가 분석: 일본·EU·호주) | `results/intl_summary.txt` |
+| 표 6\~7 (추가 분석: 일본·EU·호주) | `results/intl_summary.txt` |
 | 그림 2 (추가 분석 흐름) | `results/fig_intl.png` (자료: `intl_share_series.csv`) |
 
 핵심 숫자 (주 분석, 2022→2024년, 고노출 업종 = 정보통신업 + 전문·과학·기술서비스업):
 
 | | 이전 격차 (2019→2022) | 이후 격차 (2022→2024) | 판정 |
 |---|---|---|---|
-| 한국 (15~29세 vs 30~59세) | +0.65%p | −0.18%p | 지지 아님 |
-| 미국 (16~24세 vs 35~64세) | −1.08%p | +0.21%p | 지지 아님 |
+| 한국 (15\~29세 vs 30\~59세) | +0.65%p | −0.18%p | 지지 아님 |
+| 미국 (16\~24세 vs 35\~64세) | −1.08%p | +0.21%p | 지지 아님 |
 
 격차 = 청년층 비중 변화 − 중장년층 비중 변화. 사전 기준(이후 격차 −0.5%p 이하 등 세 조건)에 따라 가설은 기각되었습니다.
 
