@@ -18,6 +18,9 @@ img{max-width:100%;height:auto;display:block;margin:12px auto;border:1px solid v
 table{border-collapse:collapse;font-size:.88rem;line-height:1.55;min-width:100%}
 th,td{border-bottom:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
 th{background:#f1efe9;font-weight:600}
+pre{background:#f1efe9;padding:12px 14px;border-radius:6px;overflow-x:auto;font-size:.85rem;line-height:1.6}
+pre code{padding:0;background:none}
+td code{word-break:break-all}
 code{font-size:.88em;background:#f1efe9;padding:1px 4px;border-radius:3px}
 blockquote{margin:12px 0;padding:4px 16px;border-left:3px solid var(--line);color:var(--mute)}
 .by{color:var(--mute);margin:0 0 4px}
@@ -43,7 +46,7 @@ footer{margin-top:64px;color:var(--mute);font-size:.85rem}
 </section>
 <hr />
 <h2>초록</h2>
-<p>채용공고에서 신입 자리가 줄었다는 체감에서 출발해, 생성형 AI가 확산된 뒤 AI 노출 업종에서 청년층의 취업 비중이 중장년층보다 더 크게 줄었는지를 확인했다. 한국 지역별고용조사와 미국 CPS 연평균 자료로 연령대별 취업자 중 고노출 업종(정보통신업, 전문·과학·기술서비스업)의 비중을 구하고, 2022→2024년 청년층과 중장년층의 비중 변화 차이(격차)를 2019→2022년, 저노출 업종(숙박·음식점업)과 비교했다. 판정 기준과 분석 방법은 분석 전에 정해 공개 저장소에 기록했다. 주 분석에서 격차는 한국 −0.18%p, 미국 +0.21%p로 사전 기준(−0.5%p 이하)에 미치지 못해 가설은 기각되었다. 한국 청년층의 고노출 업종 비중은 오히려 10.71%(2019년)에서 13.32%(2024년)로 늘었다. 다만 한국은 2023년 이후 정체했고, 보조 분석인 2025년에는 격차가 −0.77%p로 벌어져 앞으로 지켜볼 신호로 남았다. 이 연구는 업종 단위의 관찰 자료라 AI의 인과 효과를 가리지 못하며, 직업 단위 후속 연구를 제안한다.</p>
+<p>채용공고에서 신입 자리가 줄었다는 체감에서 출발해, 생성형 AI 확산 이후 AI 노출 업종에서 청년층의 취업 비중이 중장년층보다 더 줄었는지 확인했다. 한국 지역별고용조사와 미국 CPS 연평균 자료로 연령대별 취업자 중 고노출 업종(정보통신업, 전문·과학·기술서비스업)의 비중을 구하고, 2022→2024년 청년층과 중장년층의 비중 변화 차이(격차)를 AI 이전 시기(2019→2022년), 저노출 업종(숙박·음식점업)과 비교했다. 판정 기준은 분석 전에 정해 공개 저장소에 기록했다. 격차는 한국 −0.18%p, 미국 +0.21%p로 사전 기준(−0.5%p 이하)에 미치지 못해 가설은 기각되었다. 한국 청년층의 고노출 업종 비중은 오히려 10.71%(2019년)에서 13.32%(2024년)로 늘었다. 다만 한국은 2023년 이후 정체했고 2025년 보조 분석에서 격차가 −0.77%p로 벌어졌다. 업종 단위 관찰 자료라 AI의 인과 효과는 가리지 못한다.</p>
 <p><strong>주제어</strong>: 생성형 AI, 청년 고용, AI 노출 업종, 연공편향 기술변화, 한미 비교</p>
 <hr />
 <h2>1. 서론</h2>
@@ -573,7 +576,7 @@ footer{margin-top:64px;color:var(--mute);font-size:.85rem}
 </tr>
 </tbody>
 </table></div>
-<p>사전에 정한 주 분석 기준에 따라 가설은 기각되었다.</p>
+<p>사전에 정한 주 분석 기준에 따라 가설은 기각되었다. 결과를 확인한 뒤에도 가설, 판정 기준, 업종과 연령 구분은 바꾸지 않았다. 설계를 바꾼 것은 판정에 쓰지 않는 연도별 흐름 그래프(그림 1)를 추가한 것 하나이며, 날짜와 이유를 설계서 8절에 기록했다.</p>
 <h3>3.5 연도별 흐름 (보조 그래프)</h3>
 <p><img alt="그림 1" src="results/fig_trends.png" /></p>
 <p><strong>그림 1. 연령대별 AI 고노출 업종(주) 비중의 흐름</strong></p>
@@ -616,7 +619,7 @@ footer{margin-top:64px;color:var(--mute);font-size:.85rem}
 <p>이 연구로 알게 된 가장 중요한 점은, 내가 느낀 체감과 이 연구의 통계가 서로 다른 것을 재고 있었다는 것이다. 내가 채용공고를 보며 느낀 것은 "새로 뽑는 자리"가 줄었다는 것이었다. 이 연구가 본 것은 "지금 일하고 있는 사람" 가운데 AI 노출 업종이 차지하는 비중이었다. 청년 인구가 줄어드는 가운데 이 비중이 유지되거나 늘었다는 결과는, 신입 채용이 줄었다는 체감과 모순되지 않는다. 두 가지는 함께 일어날 수 있다.</p>
 <p>그래서 처음의 질문, "AI가 청년 일자리에 영향을 주는가?"에 대한 지금의 내 답은 "아직 판단하기 이르다"이다. 생성형 AI가 공개된 뒤 주 분석에서 볼 수 있었던 기간은 2년뿐이고, 비교 기준인 2019~2022년은 코로나19 시기라 정상적인 추세라고 보기 어렵다. 한국의 2023년 이후 정체와 2025년의 격차는 눈여겨볼 신호지만, 이것이 AI 때문인지, 경력직 중심 채용 같은 다른 변화 때문인지는 이 연구의 자료로 가를 수 없다.</p>
 <p>결과와 별개로, 취업준비생으로서 나는 AI를 활용하는 쪽에 서기로 했다. 이 연구가 그 선택을 증명해 주지는 않는다. 다만 이 연구를 진행하면서 AI에게 질문 후보를 받고, 다른 AI에게 비판을 받고, 그 내용을 직접 원자료와 대조해 판단하는 과정을 거쳤다. 이 경험으로 AI와 경쟁하기보다 AI를 도구로 쓰되 판단은 직접 하는 방식이 나에게 맞는다고 느꼈다.</p>
-<p>후속 연구로는 직업 단위의 자료를 보고 싶다. 이 연구는 정보통신업처럼 큰 업종 단위로 분석해서, 같은 업종 안의 직업별 차이가 묽어졌을 수 있다. 그래서 다음 가설을 제안한다. "생성형 AI가 확산된 뒤, AI 노출이 큰 직업(예: 소프트웨어 개발자, 사무직)에서는 청년층 취업자의 비중이 중장년층보다 더 크게 줄었다." 직업 단위로 보면 업종 단위에서 묽어졌던 차이가 드러나는지, 그리고 한국의 2025년 격차가 이후에도 이어지는지를 확인할 수 있을 것이다.</p>
+<p>후속 연구로는 직업 단위의 자료를 보고 싶다. 이 연구는 정보통신업처럼 큰 업종 단위로 분석해서, 같은 업종 안의 직업별 차이가 묽어졌을 수 있다. 그래서 후속 연구를 위한 탐색적 가설로 다음을 제안한다. 이 가설은 이번 연구의 결과를 보고 세운 것이라 이번 자료로는 검증하지 않았고, 직업 단위의 새 자료로 따로 확인해야 한다. "생성형 AI가 확산된 뒤, AI 노출이 큰 직업(예: 소프트웨어 개발자, 사무직)에서는 청년층 취업자의 비중이 중장년층보다 더 크게 줄었다." 직업 단위로 보면 업종 단위에서 묽어졌던 차이가 드러나는지, 그리고 한국의 2025년 격차가 이후에도 이어지는지를 확인할 수 있을 것이다.</p>
 <hr />
 <h2>참고문헌</h2>
 <h3>문헌</h3>
@@ -715,8 +718,8 @@ footer{margin-top:64px;color:var(--mute);font-size:.85rem}
 <tbody>
 <tr>
 <td>주제 선정</td>
-<td>Claude가 연구 질문 후보 5개 제시</td>
-<td>질문 2를 고르고 이유를 적음, 해외(미국) 비교 추가를 요청함</td>
+<td>Claude가 관심사 속 생각마다 확인할 질문 후보 10개와 데이터 확보 가능성 제시</td>
+<td>질문 2(AI와 청년 일자리)와 5(일과 삶의 만족도)를 고른 뒤 2를 최종 선택하고 이유를 적음, 해외(미국) 비교 추가를 요청함</td>
 </tr>
 <tr>
 <td>가설·설계</td>
@@ -762,5 +765,41 @@ footer{margin-top:64px;color:var(--mute);font-size:.85rem}
 <li>연구 질문과 미국 비교 추가, ChatGPT 비판의 반영 여부, 해석과 결론은 내가 골랐고, 한국은행 원문·KOSIS 주석·2024년 값은 직접 열어 보고 계산해 확인했다.</li>
 <li>AI가 좋은 선택지를 많이 줘도 그중 무엇을 고를지는 내가 정해야 이 연구가 내 연구가 된다는 것을 느꼈다.</li>
 </ol>
+<h2>부록 C. 재현 방법</h2>
+<p><strong>자료 출처와 확보 방법</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>자료</th>
+<th>확보 방법</th>
+<th>접근일</th>
+<th>저장 파일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>한국: 지역별고용조사 「전국 산업/연령/교육정도/종사상지위별 취업자」</td>
+<td>KOSIS 국가통계포털에서 표를 열고 시점 2019.1/2~2026.1/2, 산업 대분류 21개와 계를 선택해 CSV로 내려받음 (파일에는 연령·교육정도·종사상지위별 취업자와 RSE가 함께 들어 있음)</td>
+<td>2026-11-06</td>
+<td><code>data/raw/kosis_regional_employment_industry_age_20261106.csv</code></td>
+</tr>
+<tr>
+<td>미국: CPS 연평균 Table 18b</td>
+<td><code>https://www.bls.gov/cps/data/aa{연도}/cpsaat18b.pdf</code>에서 2019~2025년 7개 PDF를 내려받음</td>
+<td>2026-11-06</td>
+<td><code>data/raw/bls_cpsaat18b_{연도}.pdf</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>원자료는 내려받은 그대로 보존했고, 분석은 원자료를 읽기만 한다.</p>
+<p><strong>실행 절차</strong> (Python 3.13, 패키지는 <code>requirements.txt</code>)</p>
+<pre><code class="language-bash">pip install -r requirements.txt
+python scripts/analyze_kr.py    # 한국 비중·격차·판정 → results/kr_summary.txt
+python scripts/analyze_us.py    # 미국 비중·격차·판정 → results/us_summary.txt
+python scripts/plot_trends.py   # 그림 1 → results/fig_trends.png
+python scripts/check_data.py    # 설계서의 자료가 빠짐없이 있는지 점검
+</code></pre>
+<p><strong>짧은 확인 방법</strong>: <code>results/kr_summary.txt</code>의 주 분석(J+M) 이후 격차가 −0.18%p, <code>results/us_summary.txt</code>의 주 분석(16~24세) 이후 격차가 +0.21%p이면 표 5의 판정과 같다. 손으로 확인하려면 KOSIS 화면에서 2024년 하반기 15~29세의 정보통신업(241)과 전문·과학·기술서비스업(250)을 더해 전체 취업자(3,685)로 나눈다(13.32%).</p>
+<p>논문의 표와 결과 파일의 대응, 폴더 구성은 재현 패키지의 <code>README.md</code>에 정리했다.</p>
 <footer>임병관 (Aleph) · 2026년 11월 6일 · 자료: 국가데이터처 KOSIS 지역별고용조사, U.S. BLS CPS Table 18b</footer>
 </main></body></html>
